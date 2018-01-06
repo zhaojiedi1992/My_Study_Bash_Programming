@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>10 测试</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>10 测试</h1>
+<div class="section" id="id2">
+<h2>10.1 测试命令</h2>
+<ul class="simple">
+<li><p>test expression</p></li>
+<li><p>[ expression ]</p></li>
+<li><p>[[ expression ]]</p></li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>expression2侧必须有空白符号。</p>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim test2.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat test2.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;var1&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$var1</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;yes&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;no&quot;</span>
+<span class="k">fi</span>
+
+<span class="nv">var2</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$var2</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;yes&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;no&quot;</span>
+<span class="k">fi</span>
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash test2.sh
+yes
+no
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>10.2 数值判断</h2>
+<p>bash的数值测试有下面几个</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>-gt 是否大于 (greater than)
+-ge 是否大于等于(greate equal)
+-eq 是否等于 (equal)
+-ne 是否不等于  (not equal)
+-lt 是否小于  (less than)
+-le 是否小于等于(less equal)
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">score</span><span class="o">=</span><span class="m">41</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2">&quot;</span> -gt <span class="m">60</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2"> &gt;60&quot;</span>
+<span class="k">else</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2">&quot;</span> -gt <span class="m">40</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2"> &lt;=60 , </span><span class="nv">$score</span><span class="s2"> &gt;40&quot;</span>
+    <span class="k">else</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2"> &lt;=40&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h1>10.3 字符串测试</h1>
+<div class="highlight-text"><div class="highlight"><pre><span></span>==          是否相等
+&gt;           字符串大于
+&lt;           字符串小于
+!=          字符串不想等
+=~          左侧的字符是否被右侧的正则匹配
+-z          字符串是否为空
+-n          字符串是否不空
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim test3.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat test3.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;abcdef&quot;</span>
+<span class="nv">var2</span><span class="o">=</span><span class="s2">&quot;^a.*f</span>$<span class="s2">&quot;</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$var1</span><span class="s2">&quot;</span> <span class="o">=</span>~ <span class="nv">$var2</span>   <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;match&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;not match&quot;</span>
+<span class="k">fi</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash test3.sh
+match
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h1>10.3 文件测试</h1>
+<dl class="option-list">
+<dt><kbd><span class="option">-e</span></kbd></dt>
+<dd><p>文件存在性测试，存在为真，否则为假</p>
+</dd>
+<dt><kbd><span class="option">-b</span></kbd></dt>
+<dd><p>是否存在且为块设备文件</p>
+</dd>
+<dt><kbd><span class="option">-c</span></kbd></dt>
+<dd><p>是否存在且为字符设备文件</p>
+</dd>
+<dt><kbd><span class="option">-d</span></kbd></dt>
+<dd><p>是否存在且为目录文件</p>
+</dd>
+<dt><kbd><span class="option">-f</span></kbd></dt>
+<dd><p>是否存在且为普通文件</p>
+</dd>
+<dt><kbd><span class="option">-L</span></kbd></dt>
+<dd><p>存在且为符号链接文件</p>
+</dd>
+<dt><kbd><span class="option">-p</span></kbd></dt>
+<dd><p>是否存在且为命名管道文件</p>
+</dd>
+<dt><kbd><span class="option">-S</span></kbd></dt>
+<dd><p>是否存在且为套接字文件</p>
+</dd>
+<dt><kbd><span class="option">-r</span></kbd></dt>
+<dd><p>是否存在且可读</p>
+</dd>
+<dt><kbd><span class="option">-w</span></kbd></dt>
+<dd><p>是否存在且可写</p>
+</dd>
+<dt><kbd><span class="option">-x</span></kbd></dt>
+<dd><p>是否存在且可执行</p>
+</dd>
+</dl>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim test4.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat test4.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">dir</span><span class="o">=</span>/app2
+
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    mkdir -pv <span class="nv">$dir</span>
+<span class="k">fi</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash test4.sh
+mkdir: created directory <span class="s1">&#39;/app2&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>10.4 测试组合</h1>
+<p>测试组合使用&amp;&amp; ,|| ,! 或者-a,-o都是可以的。</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

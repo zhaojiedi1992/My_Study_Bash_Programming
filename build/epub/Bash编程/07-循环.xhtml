@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>07 循环</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>07 循环</h1>
+<div class="section" id="for">
+<h2>7.1 for</h2>
+<p>for的命令使用</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">help</span> <span class="k">for</span>
+<span class="k">for</span>: <span class="k">for</span> NAME <span class="o">[</span>in WORDS ... <span class="o">]</span> <span class="p">;</span> <span class="k">do</span> COMMANDS<span class="p">;</span> <span class="k">done</span>
+<span class="k">for</span> <span class="o">((</span>: <span class="k">for</span> <span class="o">((</span> exp1<span class="p">;</span> exp2<span class="p">;</span> exp3 <span class="o">))</span><span class="p">;</span> <span class="k">do</span> COMMANDS<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<p>bash风格：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">declare</span> -i <span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span> i in <span class="sb">`</span>seq <span class="m">1</span> <span class="m">10</span><span class="sb">`</span> <span class="p">;</span> <span class="k">do</span>
+    <span class="nv">sum</span><span class="o">+=</span><span class="nv">$i</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="nv">$sum</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>这个方案是bash风格的for语句，变量的引用都要使用$的。</p>
+</div>
+<p>c风格:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">declare</span> -i <span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+<span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span> i&lt;<span class="o">=</span><span class="m">10</span><span class="p">;</span> i++<span class="o">))</span><span class="p">;</span> <span class="k">do</span>
+    <span class="nv">sum</span><span class="o">+=</span>i
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="nv">$sum</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>这个风格是c语句风格的，变量不需要$的。</p>
+</div>
+</div>
+<div class="section" id="while">
+<h2>7.2 while</h2>
+<p>while的命令使用</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">help</span> <span class="k">while</span>
+<span class="k">while</span>: <span class="k">while</span> COMMANDS<span class="p">;</span> <span class="k">do</span> COMMANDS<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<p>样例1：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">declare</span> -i <span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+<span class="nb">declare</span> -i <span class="nv">i</span><span class="o">=</span><span class="m">0</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$i</span> -le <span class="m">10</span> <span class="o">]</span>  <span class="p">;</span> <span class="k">do</span>
+        <span class="nv">sum</span><span class="o">+=</span><span class="nv">$i</span>
+        <span class="nv">i</span><span class="o">=</span>$<span class="o">[</span>i+1<span class="o">]</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="nv">$sum</span>
+</pre></div>
+</div>
+<p>样例2：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim person.txt
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat person.txt
+zhaojiedi <span class="m">23</span>
+liming <span class="m">24</span>
+xiaojia <span class="m">18</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat while2.sh
+<span class="c1">#!/bin/bash</span>
+
+
+<span class="k">while</span> <span class="nb">read</span> name age <span class="p">;</span> <span class="k">do</span>
+    <span class="nb">echo</span> <span class="s2">&quot;name is </span><span class="nv">$name</span><span class="s2">, age is </span><span class="nv">$age</span><span class="s2">&quot;</span>
+<span class="k">done</span> &lt; person.txt
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash while2.sh
+name is zhaojiedi, age is <span class="m">23</span>
+name is liming, age is <span class="m">24</span>
+name is xiaojia, age is <span class="m">18</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="until">
+<h2>7.3 until</h2>
+<p>until 的命令使用</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">help</span> <span class="k">until</span>
+<span class="k">until</span>: <span class="k">until</span> COMMANDS<span class="p">;</span> <span class="k">do</span> COMMANDS<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nb">declare</span> -i <span class="nv">sum</span><span class="o">=</span><span class="m">0</span>
+<span class="nb">declare</span> -i <span class="nv">i</span><span class="o">=</span><span class="m">10</span>
+<span class="k">until</span> <span class="o">[</span> <span class="nv">$i</span> -lt <span class="m">0</span> <span class="o">]</span>  <span class="p">;</span> <span class="k">do</span>
+        <span class="nv">sum</span><span class="o">+=</span><span class="nv">$i</span>
+        <span class="nv">i</span><span class="o">=</span>$<span class="o">[</span>i-1<span class="o">]</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="nv">$sum</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>while是判断条件为true才继续。而until相反。</p>
+</div>
+</div>
+<div class="section" id="case">
+<h2>7.4 case</h2>
+<p>case的命令使用</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 etc<span class="o">]</span>$ <span class="nb">help</span> <span class="k">case</span>
+<span class="k">case</span>: <span class="k">case</span> WORD in <span class="o">[</span>PATTERN <span class="o">[</span><span class="p">|</span> PATTERN<span class="o">]</span>...<span class="o">)</span> COMMANDS <span class="p">;;</span><span class="o">]</span>... <span class="k">esac</span>
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat <span class="k">case</span>.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="k">case</span> <span class="nv">$1</span> in
+
+a<span class="p">|</span>b<span class="p">|</span>c<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;you enter (a|b|c)&quot;</span>
+    <span class="p">;;</span>
+d<span class="p">|</span>e<span class="p">|</span>f<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot;you enter (d|e|f)&quot;</span>
+    <span class="p">;;</span>
+*<span class="o">)</span>
+    <span class="nb">echo</span> <span class="s2">&quot; other char&quot;</span>
+    <span class="p">;;</span>
+<span class="k">esac</span>
+</pre></div>
+</div>
+<p>调用</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ ./case.sh <span class="m">2</span>
+other char
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ ./case.sh a
+you enter <span class="o">(</span>a<span class="p">|</span>b<span class="p">|</span>c<span class="o">)</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ ./case.sh d
+you enter <span class="o">(</span>d<span class="p">|</span>e<span class="p">|</span>f<span class="o">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="select">
+<h2>7.5  select</h2>
+<p>select的命令使用</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">help</span> <span class="k">select</span>
+<span class="k">select</span>: <span class="k">select</span> NAME <span class="o">[</span>in WORDS ... <span class="p">;</span><span class="o">]</span> <span class="k">do</span> COMMANDS<span class="p">;</span> <span class="k">done</span>
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="k">select</span> c in yes no <span class="p">;</span> <span class="k">do</span>
+        <span class="nb">echo</span> <span class="s2">&quot; you enter is </span><span class="nv">$c</span><span class="s2">&quot;</span>
+        <span class="k">case</span> <span class="nv">$c</span> in
+                yes<span class="o">)</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;yes&quot;</span><span class="p">;;</span>
+                no<span class="o">)</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;no&quot;</span><span class="p">;;</span>
+                *<span class="o">)</span>
+                        <span class="nb">echo</span> <span class="s2">&quot;other&quot;</span><span class="p">;;</span>
+        <span class="k">esac</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>select是不同与case的，内置有死循环的。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

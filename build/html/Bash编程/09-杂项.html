@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>09-杂项 &mdash; My_Study_Bash_Programming v0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="My_Study_Bash_Programming v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="10 测试" href="10-测试.html"/>
+        <link rel="prev" title="08-函数" href="08-函数.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My_Study_Bash_Programming
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bash编程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01-简介.html">01 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-入门样例.html">02 入门样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-关于重定向.html">03 关于重定向</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-管道.html">04 管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-变量.html">05 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-分支.html">06 分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-循环.html">07 循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-函数.html">08-函数</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">09-杂项</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#read">9.1 读取输入使用read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">9.2 算数运算</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">9.3 获取返回值</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">9.4 获取随机值</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html">10 测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html#id4">10.3 字符串测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html#id5">10.3 文件测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html#id6">10.4 测试组合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-更多脚本.html">11 更多脚本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-调试.html">12 调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My_Study_Bash_Programming</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>09-杂项</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Bash编程/09-杂项.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>09-杂项<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="read">
+<h2>9.1 读取输入使用read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim read.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat read.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nb">read</span> -p <span class="s2">&quot;please input you age : &quot;</span> age
+
+<span class="nb">echo</span> you age is <span class="nv">$age</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash read.sh
+please input you age : <span class="m">25</span>
+you age is <span class="m">25</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">read是可以一次接受多个输入的，也就是我们可以read a b 读取两个数分别赋给 a,b。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>9.2 算数运算<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>bash中的算数运算比较多，详细可以参考help let</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>id++, id--  variable post-increment, post-decrement
+++id, --id  variable pre-increment, pre-decrement
+-, +                unary minus, plus
+!, ~                logical and bitwise negation
+**          exponentiation
+*, /, %             multiplication, division, remainder
++, -                addition, subtraction
+&lt;&lt;, &gt;&gt;              left and right bitwise shifts
+&lt;=, &gt;=, &lt;, &gt;        comparison
+==, !=              equality, inequality
+&amp;           bitwise AND
+^           bitwise XOR
+|           bitwise OR
+&amp;&amp;          logical AND
+||          logical OR
+expr ? expr : expr
+        conditional operator
+=, *=, /=, %=,
++=, -=, &lt;&lt;=, &gt;&gt;=,
+&amp;=, ^=, |=  assignment
+</pre></div>
+</div>
+<p>实现算数运算的几种方式</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">let</span> <span class="nv">a</span><span class="o">=</span><span class="m">1</span>+1 <span class="p">;</span> <span class="nb">echo</span> <span class="nv">$a</span>
+<span class="m">2</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="m">1</span>+1
+<span class="m">1</span>+1
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> $<span class="o">[</span><span class="m">1</span>+1<span class="o">]</span>
+<span class="m">2</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="k">$((</span><span class="m">1</span><span class="o">+</span><span class="m">1</span><span class="k">))</span>
+<span class="m">2</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="nb">echo</span> <span class="m">1</span>+1 <span class="p">|</span>bc
+<span class="m">2</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">bash是无类型的，默认都认为是字符串的。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>9.3 获取返回值<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>通常情况下返回码为0代表成功，其他都是失败，$?变量保存最近的命令退出状态。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>cmd1
+<span class="nb">echo</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>9.4 获取随机值<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>通常情况下返回码为0代表成功，其他都是失败，$?变量保存最近的命令退出状态。</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="nb">echo</span> $<span class="o">[</span>RANDOM%50<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="10-测试.html" class="btn btn-neutral float-right" title="10 测试" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="08-函数.html" class="btn btn-neutral" title="08-函数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zhaojiedi1992.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

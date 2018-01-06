@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>03 关于重定向 &mdash; My_Study_Bash_Programming v0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="My_Study_Bash_Programming v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="04 管道" href="04-管道.html"/>
+        <link rel="prev" title="02 入门样例" href="02-入门样例.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My_Study_Bash_Programming
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bash编程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01-简介.html">01 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-入门样例.html">02 入门样例</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">03 关于重定向</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">3.1 常用的重定向方式</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.2 重定向的一些样例</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">3.2.1 重定向标准输出到一个文件中</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">3.2.1 重定向错误和输出到空设备</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">3.2.1 重定向错误到输出然后在重定向到一个文件中</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04-管道.html">04 管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-变量.html">05 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-分支.html">06 分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-循环.html">07 循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-函数.html">08-函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-杂项.html">09-杂项</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html">10 测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html#id4">10.3 字符串测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html#id5">10.3 文件测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10-测试.html#id6">10.4 测试组合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-更多脚本.html">11 更多脚本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-调试.html">12 调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My_Study_Bash_Programming</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>03 关于重定向</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Bash编程/03-关于重定向.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>03 关于重定向<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>再说重定向之前，先说说三个标准流吧。</p>
+<dl class="docutils">
+<dt>stdin</dt>
+<dd>标准输入流,文件描述符是0</dd>
+<dt>stdout</dt>
+<dd>标准输出流,文件描述符是1</dd>
+<dt>stderr</dt>
+<dd>标准错误流,文件描述符是2</dd>
+</dl>
+<div class="section" id="id2">
+<h2>3.1 常用的重定向方式<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>重定向stdout到一个文件</li>
+<li>重定向stderr到一个文件</li>
+<li>重定向stdout到stderr</li>
+<li>重定向stderr到stdout</li>
+<li>重定向stderr和stdout到一个文件</li>
+<li>重定向stdout和stdout到stdout</li>
+<li>重定向stdoutheelsstderr到stderr</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>3.2 重定向的一些样例<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>3.2.1 重定向标准输出到一个文件中<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ ls -l &gt;ls-l.txt
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat ls-l.txt
+total <span class="m">8</span>
+-rwxr-xr-x. <span class="m">1</span> root root <span class="m">32</span> Jan  <span class="m">2</span> <span class="m">12</span>:56 helloword.sh
+-rw-r--r--. <span class="m">1</span> root root <span class="m">24</span> Jan  <span class="m">1</span> <span class="m">20</span>:50 lines.txt
+-rw-r--r--. <span class="m">1</span> root root  <span class="m">0</span> Jan  <span class="m">2</span> <span class="m">13</span>:09 ls-l.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>3.2.1 重定向错误和输出到空设备<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ ifconfig <span class="m">1</span>&gt;/dev/null <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ ifconfig <span class="p">&amp;</span>&gt;/dev/null
+</pre></div>
+</div>
+<p>这2个命令是等价的，</p>
+</div>
+<div class="section" id="id6">
+<h3>3.2.1 重定向错误到输出然后在重定向到一个文件中<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ <span class="o">(</span>ls -l <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">;</span> ixxx <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">;</span> <span class="o">)</span> &gt;1.txt
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat <span class="m">1</span>.txt
+total <span class="m">12</span>
+-rw-r--r--. <span class="m">1</span> root root   <span class="m">0</span> Jan  <span class="m">2</span> <span class="m">13</span>:14 <span class="m">1</span>.txt
+-rwxr-xr-x. <span class="m">1</span> root root  <span class="m">32</span> Jan  <span class="m">2</span> <span class="m">12</span>:56 helloword.sh
+-rw-r--r--. <span class="m">1</span> root root  <span class="m">24</span> Jan  <span class="m">1</span> <span class="m">20</span>:50 lines.txt
+-rw-r--r--. <span class="m">1</span> root root <span class="m">160</span> Jan  <span class="m">2</span> <span class="m">13</span>:09 ls-l.txt
+bash: ixxx: <span class="nb">command</span> not found...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04-管道.html" class="btn btn-neutral float-right" title="04 管道" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02-入门样例.html" class="btn btn-neutral" title="02 入门样例" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zhaojiedi1992.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

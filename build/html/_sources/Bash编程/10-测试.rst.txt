@@ -1,0 +1,140 @@
+10 测试
+==============================
+
+10.1 测试命令
+-------------------------------------------
+
+- test expression
+- [ expression ]
+- [[ expression ]]
+
+.. attention:: expression2侧必须有空白符号。
+
+样例： 
+
+.. code-block:: bash
+
+    [root@centos74 test]$ vim test2.sh
+    [root@centos74 test]$ cat test2.sh
+    #!/bin/bash 
+
+    var1="var1" 
+
+    if [ "$var1" ] ; then 
+        echo "yes" 
+    else 
+        echo "no"
+    fi 
+
+    var2="" 
+
+    if [ "$var2" ] ; then 
+        echo "yes"
+    else
+        echo "no" 
+    fi 
+
+    [root@centos74 test]$ bash test2.sh
+    yes
+    no
+
+10.2 数值判断
+----------------------------------------
+
+bash的数值测试有下面几个
+
+.. code-block:: text
+
+    -gt 是否大于 (greater than)
+    -ge 是否大于等于(greate equal)
+    -eq 是否等于 (equal)
+    -ne 是否不等于  (not equal)
+    -lt 是否小于  (less than)
+    -le 是否小于等于(less equal)
+
+样例： 
+
+.. code-block:: bash
+
+    #!/bin/bash
+
+    score=41
+    if [ "$score" -gt 60 ] ; then 
+        echo "$score >60" 
+    else
+        if [ "$score" -gt 40 ] ; then 
+            echo "$score <=60 , $score >40" 
+        else
+            echo "$score <=40"
+        fi
+    fi
+
+10.3 字符串测试
+===================================================
+
+.. code-block:: text
+
+    ==          是否相等
+    >           字符串大于
+    <           字符串小于
+    !=          字符串不想等
+    =~          左侧的字符是否被右侧的正则匹配
+    -z          字符串是否为空
+    -n          字符串是否不空
+
+样例：
+
+.. code-block:: bash
+
+    [root@centos74 test]$ vim test3.sh 
+    [root@centos74 test]$ cat test3.sh 
+    #!/bin/bash
+
+    var1="abcdef"
+    var2="^a.*f$"
+
+    if [[ "$var1" =~ $var2   ]] ; then 
+        echo "match" 
+    else 
+        echo "not match" 
+    fi
+    [root@centos74 test]$ bash test3.sh 
+    match
+
+10.3 文件测试
+===================================================
+
+-e                  文件存在性测试，存在为真，否则为假  
+-b                  是否存在且为块设备文件  
+-c                  是否存在且为字符设备文件  
+-d                  是否存在且为目录文件  
+-f                  是否存在且为普通文件  
+-L                  存在且为符号链接文件  
+-p                  是否存在且为命名管道文件  
+-S                  是否存在且为套接字文件 
+-r                  是否存在且可读  
+-w                  是否存在且可写  
+-x                  是否存在且可执行 
+
+样例： 
+
+.. code-block:: bash
+
+    [root@centos74 test]$ vim test4.sh
+    [root@centos74 test]$ cat test4.sh
+    #!/bin/bash 
+
+    dir=/app2
+
+    if [ ! -d "$dir" ] ; then 
+        mkdir -pv $dir
+    fi
+    [root@centos74 test]$ bash test4.sh 
+    mkdir: created directory '/app2'
+
+
+10.4 测试组合
+===================================================
+
+测试组合使用&& ,|| ,! 或者-a,-o都是可以的。
+

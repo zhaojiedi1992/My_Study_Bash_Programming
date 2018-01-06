@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10 测试 &mdash; My_Study_Bash_Programming v0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="My_Study_Bash_Programming v0.1 documentation" href="../index.html"/>
+        <link rel="next" title="11 更多脚本" href="11-更多脚本.html"/>
+        <link rel="prev" title="09-杂项" href="09-杂项.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> My_Study_Bash_Programming
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                v0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Bash编程</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="01-简介.html">01 简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02-入门样例.html">02 入门样例</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03-关于重定向.html">03 关于重定向</a></li>
+<li class="toctree-l1"><a class="reference internal" href="04-管道.html">04 管道</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05-变量.html">05 变量</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06-分支.html">06 分支</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07-循环.html">07 循环</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08-函数.html">08-函数</a></li>
+<li class="toctree-l1"><a class="reference internal" href="09-杂项.html">09-杂项</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10 测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">10.1 测试命令</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">10.2 数值判断</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id4">10.3 字符串测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id5">10.3 文件测试</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#id6">10.4 测试组合</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-更多脚本.html">11 更多脚本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-调试.html">12 调试</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">My_Study_Bash_Programming</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>10 测试</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/Bash编程/10-测试.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>10 测试<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>10.1 测试命令<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>test expression</li>
+<li>[ expression ]</li>
+<li>[[ expression ]]</li>
+</ul>
+<div class="admonition attention">
+<p class="first admonition-title">Attention</p>
+<p class="last">expression2侧必须有空白符号。</p>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim test2.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat test2.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;var1&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$var1</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;yes&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;no&quot;</span>
+<span class="k">fi</span>
+
+<span class="nv">var2</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$var2</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;yes&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;no&quot;</span>
+<span class="k">fi</span>
+
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash test2.sh
+yes
+no
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>10.2 数值判断<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>bash的数值测试有下面几个</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>-gt 是否大于 (greater than)
+-ge 是否大于等于(greate equal)
+-eq 是否等于 (equal)
+-ne 是否不等于  (not equal)
+-lt 是否小于  (less than)
+-le 是否小于等于(less equal)
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">score</span><span class="o">=</span><span class="m">41</span>
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2">&quot;</span> -gt <span class="m">60</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2"> &gt;60&quot;</span>
+<span class="k">else</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2">&quot;</span> -gt <span class="m">40</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2"> &lt;=60 , </span><span class="nv">$score</span><span class="s2"> &gt;40&quot;</span>
+    <span class="k">else</span>
+        <span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$score</span><span class="s2"> &lt;=40&quot;</span>
+    <span class="k">fi</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h1>10.3 字符串测试<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-text"><div class="highlight"><pre><span></span>==          是否相等
+&gt;           字符串大于
+&lt;           字符串小于
+!=          字符串不想等
+=~          左侧的字符是否被右侧的正则匹配
+-z          字符串是否为空
+-n          字符串是否不空
+</pre></div>
+</div>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim test3.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat test3.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;abcdef&quot;</span>
+<span class="nv">var2</span><span class="o">=</span><span class="s2">&quot;^a.*f</span>$<span class="s2">&quot;</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;</span><span class="nv">$var1</span><span class="s2">&quot;</span> <span class="o">=</span>~ <span class="nv">$var2</span>   <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;match&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;not match&quot;</span>
+<span class="k">fi</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash test3.sh
+match
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h1>10.3 文件测试<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h1>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-e</span></kbd></td>
+<td>文件存在性测试，存在为真，否则为假</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span></kbd></td>
+<td>是否存在且为块设备文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>是否存在且为字符设备文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>是否存在且为目录文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span></kbd></td>
+<td>是否存在且为普通文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-L</span></kbd></td>
+<td>存在且为符号链接文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td>是否存在且为命名管道文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-S</span></kbd></td>
+<td>是否存在且为套接字文件</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-r</span></kbd></td>
+<td>是否存在且可读</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-w</span></kbd></td>
+<td>是否存在且可写</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-x</span></kbd></td>
+<td>是否存在且可执行</td></tr>
+</tbody>
+</table>
+<p>样例：</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="o">[</span>root@centos74 test<span class="o">]</span>$ vim test4.sh
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ cat test4.sh
+<span class="c1">#!/bin/bash</span>
+
+<span class="nv">dir</span><span class="o">=</span>/app2
+
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;</span><span class="nv">$dir</span><span class="s2">&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+    mkdir -pv <span class="nv">$dir</span>
+<span class="k">fi</span>
+<span class="o">[</span>root@centos74 test<span class="o">]</span>$ bash test4.sh
+mkdir: created directory <span class="s1">&#39;/app2&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h1>10.4 测试组合<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h1>
+<p>测试组合使用&amp;&amp; ,|| ,! 或者-a,-o都是可以的。</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="11-更多脚本.html" class="btn btn-neutral float-right" title="11 更多脚本" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="09-杂项.html" class="btn btn-neutral" title="09-杂项" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, zhaojiedi1992.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'v0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

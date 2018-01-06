@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>08-函数</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>08-函数</h1>
+<div class="section" id="id2">
+<h2>8.1 函数样例</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">function</span> my_sum<span class="o">(){</span>
+    <span class="nb">local</span> <span class="nv">a</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="nb">local</span> <span class="nv">b</span><span class="o">=</span><span class="nv">$2</span>
+    <span class="nb">echo</span> $<span class="o">[</span>a+b<span class="o">]</span>
+<span class="o">}</span>
+
+my_sum <span class="m">2</span> <span class="m">4</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>bash中的中return返回的值只能是0-255，返回的是状态码。</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>8.2 接收函数返回结果</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">function</span> my_sum<span class="o">(){</span>
+        <span class="nb">local</span> <span class="nv">a</span><span class="o">=</span><span class="nv">$1</span>
+        <span class="nb">local</span> <span class="nv">b</span><span class="o">=</span><span class="nv">$2</span>
+        <span class="nb">echo</span> $<span class="o">[</span>a+b<span class="o">]</span>
+<span class="o">}</span>
+
+<span class="nv">a</span><span class="o">=</span><span class="sb">`</span>my_sum <span class="m">2</span> <span class="m">4</span><span class="sb">`</span>
+<span class="nb">echo</span> <span class="nv">$a</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>8.3 接收函数返回的状态码</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">function</span> is_yes<span class="o">(){</span>
+
+        <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+                <span class="k">return</span> <span class="m">0</span>
+        <span class="k">else</span>
+                <span class="k">return</span> <span class="m">1</span>
+        <span class="k">fi</span>
+<span class="o">}</span>
+
+is_yes <span class="s2">&quot;abc&quot;</span>
+<span class="nb">echo</span> <span class="nv">$?</span>
+is_yes <span class="s2">&quot;yes&quot;</span>
+<span class="nb">echo</span> <span class="nv">$?</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>在函数使用return去返回状态码只是终止了本函数堆栈调用，而exit是退出整个程序。</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

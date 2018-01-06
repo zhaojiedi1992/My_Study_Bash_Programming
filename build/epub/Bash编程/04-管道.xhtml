@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>04 管道</title>
+    <link rel="stylesheet" href="../_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> 
+  </head>
+  <body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="id1">
+<h1>04 管道</h1>
+<div class="section" id="id2">
+<h2>4.1 啥时候使用管道</h2>
+<p>我们知道linux的基本原则中有一条是集合小程序完成大功能，其实就需要管道配合的。我们在一个命令的输出需要交给下一个命令的输入的时候就需要管道来交接数据。</p>
+</div>
+<div class="section" id="id3">
+<h2>4.2 使用管道样例</h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>ls -l <span class="p">|</span> sed -e <span class="s2">&quot;s/[aeio]/u/g&quot;</span>
+</pre></div>
+</div>
+<p>这个就是使用ls命令列出文件列表， 使用sed替换了下。</p>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

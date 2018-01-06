@@ -1,0 +1,6 @@
+11 更多脚本
+==================================
+
+linux学习笔记_
+
+.. _linux学习笔记 : http://my-study-linux.readthedocs.io/en/latest/%E7%BB%83%E4%B9%A0%E9%A2%98/22-2017-12-18-%E7%BB%83%E4%B9%A0-%E8%84%9A%E6%9C%AC%E8%BF%9B%E9%98%B6%E5%BE%AA%E7%8E%AF.html?highlight=select#id1 

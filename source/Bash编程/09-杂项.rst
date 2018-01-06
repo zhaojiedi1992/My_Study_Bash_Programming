@@ -1,0 +1,86 @@
+09-杂项
+================================================
+
+9.1 读取输入使用read
+------------------------------------------------------
+
+.. code-block:: bash
+
+    [root@centos74 test]$ vim read.sh 
+    [root@centos74 test]$ cat read.sh 
+    #!/bin/bash 
+
+    read -p "please input you age : " age 
+
+    echo you age is $age
+    [root@centos74 test]$ bash read.sh 
+    please input you age : 25
+    you age is 25
+
+.. note:: read是可以一次接受多个输入的，也就是我们可以read a b 读取两个数分别赋给 a,b。
+
+9.2 算数运算
+------------------------------------------------------
+
+bash中的算数运算比较多，详细可以参考help let
+
+.. code-block:: text
+
+    id++, id--	variable post-increment, post-decrement
+    ++id, --id	variable pre-increment, pre-decrement
+    -, +		unary minus, plus
+    !, ~		logical and bitwise negation
+    **		exponentiation
+    *, /, %		multiplication, division, remainder
+    +, -		addition, subtraction
+    <<, >>		left and right bitwise shifts
+    <=, >=, <, >	comparison
+    ==, !=		equality, inequality
+    &		bitwise AND
+    ^		bitwise XOR
+    |		bitwise OR
+    &&		logical AND
+    ||		logical OR
+    expr ? expr : expr
+            conditional operator
+    =, *=, /=, %=,
+    +=, -=, <<=, >>=,
+    &=, ^=, |=	assignment
+
+实现算数运算的几种方式
+
+.. code-block:: bash
+
+    [root@centos74 test]$ let a=1+1 ; echo $a
+    2
+    [root@centos74 test]$ echo 1+1
+    1+1
+    [root@centos74 test]$ echo $[1+1]
+    2
+    [root@centos74 test]$ echo $((1+1))
+    2
+    [root@centos74 test]$ echo 1+1 |bc 
+    2
+
+.. attention:: bash是无类型的，默认都认为是字符串的。
+
+9.3 获取返回值
+------------------------------------------------------
+
+通常情况下返回码为0代表成功，其他都是失败，$?变量保存最近的命令退出状态。
+
+.. code-block:: bash
+
+    cmd1
+    echo $?
+
+9.4 获取随机值
+------------------------------------------------------
+
+通常情况下返回码为0代表成功，其他都是失败，$?变量保存最近的命令退出状态。
+
+.. code-block:: bash
+
+    echo $[RANDOM%50]
+
+

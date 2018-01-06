@@ -1,0 +1,61 @@
+03 关于重定向
+============================================
+
+再说重定向之前，先说说三个标准流吧。
+
+stdin
+    标准输入流,文件描述符是0
+stdout
+    标准输出流,文件描述符是1
+stderr
+    标准错误流,文件描述符是2
+
+3.1 常用的重定向方式
+-----------------------------------------------------
+
+#. 重定向stdout到一个文件
+#. 重定向stderr到一个文件
+#. 重定向stdout到stderr
+#. 重定向stderr到stdout
+#. 重定向stderr和stdout到一个文件
+#. 重定向stdout和stdout到stdout
+#. 重定向stdoutheelsstderr到stderr
+
+3.2 重定向的一些样例
+---------------------------------------------------------------
+
+3.2.1 重定向标准输出到一个文件中
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    [root@centos74 test]$ ls -l >ls-l.txt
+    [root@centos74 test]$ cat ls-l.txt 
+    total 8
+    -rwxr-xr-x. 1 root root 32 Jan  2 12:56 helloword.sh
+    -rw-r--r--. 1 root root 24 Jan  1 20:50 lines.txt
+    -rw-r--r--. 1 root root  0 Jan  2 13:09 ls-l.txt
+
+3.2.1 重定向错误和输出到空设备
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    [root@centos74 test]$ ifconfig 1>/dev/null 2>&1
+    [root@centos74 test]$ ifconfig &>/dev/null
+
+这2个命令是等价的，
+
+3.2.1 重定向错误到输出然后在重定向到一个文件中
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    [root@centos74 test]$ (ls -l 2>&1 ; ixxx 2>&1 ; ) >1.txt
+    [root@centos74 test]$ cat 1.txt 
+    total 12
+    -rw-r--r--. 1 root root   0 Jan  2 13:14 1.txt
+    -rwxr-xr-x. 1 root root  32 Jan  2 12:56 helloword.sh
+    -rw-r--r--. 1 root root  24 Jan  1 20:50 lines.txt
+    -rw-r--r--. 1 root root 160 Jan  2 13:09 ls-l.txt
+    bash: ixxx: command not found...
